@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @client.name %>
+</p>
+
+<p>
+  <b>Areas:</b>
+  <%= @client.areas %>
+</p>
+
+<h1>Listing tags</h1>
+
+<table>
+  <tr>
+    <th>Area</th>
+    <th>Epc</th>
+    <th>Timestamp</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tags.each do |tag| %>
+  <tr>
+    <td><%= tag.area %></td>
+    <td><%= tag.epc %></td>
+    <td><%= tag.timestamp %></td>
+    <td><%= link_to 'Show', client_tag_path(tag) %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+
+<%= link_to 'Edit', edit_client_path %>

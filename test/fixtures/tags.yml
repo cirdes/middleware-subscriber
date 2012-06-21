@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  area: MyString
+  epc: MyString
+  timestamp: MyString
+
+two:
+  area: MyString
+  epc: MyString
+  timestamp: MyString
