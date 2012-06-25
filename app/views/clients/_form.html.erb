@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :areas %><br />
-    <%= f.text_field :areas %>
+    <%= f.select :areas, ([["Sala", "sala"], ["Quarto", "quarto"], ["Cozinha", "cozinha"]]) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120621213802) do
   create_table "tags", :force => true do |t|
     t.string   "area"
     t.string   "epc"
-    t.string   "timestamp"
+    t.datetime "timestamp"
     t.integer  "client_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

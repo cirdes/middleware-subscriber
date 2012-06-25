@@ -3,7 +3,7 @@ class CreateTags < ActiveRecord::Migration
     create_table :tags do |t|
       t.string :area
       t.string :epc
-      t.string :timestamp
+      t.datetime :timestamp
       t.integer :client_id
 
       t.timestamps

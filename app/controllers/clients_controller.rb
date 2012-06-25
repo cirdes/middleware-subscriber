@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
     @client = Client.first
     respond_to do |format|
       if @client
-        @tags = @client.tags
+        @tags = Tag.all(:order => "timestamp DESC")
         format.html # show.html.erb
         format.json { render json: @client }
       else
