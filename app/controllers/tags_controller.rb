@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  protect_from_forgery :except => :create
+
   # GET /tags
   # GET /tags.json
   def index
@@ -40,11 +42,25 @@ class TagsController < ApplicationController
   # POST /tags
   # POST /tags.json
   def create
+    @client = Client.first
     @tag = Tag.new(params[:tag])
+
+    if(params[:tag])
+      @tag = Tag.new(params[:tag])
+    else
+      area = params[:area]
+      epc = params[:epc]
+      timestamp = params[:timestamp]
+      @tag = Tag.new({"area"=> area,
+                      "epc" => epc,
+                      "timestamp" => timestamp})
+      @tag.client = @client
+    end
+
 
     respond_to do |format|
       if @tag.save
-        format.html { redirect_to @tag, notice: 'Tag was successfully created.' }
+        format.html { redirect_to @client, notice: 'Tag was successfully created.' }
         format.json { render json: @tag, status: :created, location: @tag }
       else
         format.html { render action: "new" }
